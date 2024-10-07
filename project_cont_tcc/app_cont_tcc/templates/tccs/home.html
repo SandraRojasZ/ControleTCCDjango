@@ -1,0 +1,97 @@
+{% extends 'tccs/base.html' %}
+
+<!--Onde sera renderizado-->
+{% block conteudo %}
+
+<!-- Deverá ser adicionado na urls.py/rota o direcionamento da action para listagem_tcc
+    method="post"
+ -->
+<form action="{% url 'listagem_tcc' %}" method="post" class="form-horizontal" style="width: 50%; margin: 0 auto;">
+    {% csrf_token %}
+    <div class="form-group">
+        <h1 style="margin: 0 auto;">Cadastro de TCC</h1>
+        <br>
+        <!-- NOME -->
+        <div class="form-group">
+            <label for="nome" class="col-sm-10 control-label">Nome do Orientador:</label>
+            <div class="col-sm-10">
+                <input type="text" id="nome" name="nome" class="form-control">
+            </div>
+        </div>
+        <!-- TITULO -->
+        <div class="form-group">
+            <label for="titulo" class="col-sm-10 control-label">Título da TCC:</label>
+            <div class="col-sm-10">
+                <input type="text" id="titulo" name="titulo" class="form-control">
+            </div>
+        </div>
+        <!-- DESCRIÇÃO-->
+        <div class="form-group">
+            <label for="descricao" class="col-sm-10 control-label">Descrição da TCC:</label>
+            <div class="col-sm-10">
+                <textarea id="descricao" name="descricao" class="form-control"></textarea>
+            </div>
+        </div>
+        <!-- ALUNO 1 -->
+        <div class="form-group">
+            <label for="aluno1" class="col-sm-10 control-label">Nome Aluno 1:</label>
+            <div class="col-sm-10">
+                <input type="text" id="aluno1" name="aluno1" class="form-control">
+            </div>
+        </div>
+        <!-- ALUNO 2 -->
+        <div class="form-group">
+            <label for="aluno2" class="col-sm-10 control-label">Nome Aluno 2:</label>
+            <div class="col-sm-10">
+                <input type="text" id="aluno2" name="aluno2" class="form-control">
+            </div>
+        </div>
+        <!-- ALUNO 3 -->
+        <div class="form-group">
+            <label for="aluno3" class="col-sm-10 control-label">Nome Aluno 3:</label>
+            <div class="col-sm-10">
+                <input type="text" id="aluno3" name="aluno3" class="form-control">
+            </div>
+        </div>
+        <!-- CURSO -->
+        <div class="form-group">
+            <label for="curso" class="col-sm-2 control-label">Curso:</label>
+            <div class="col-sm-10">
+                <select type="" id="curso" name="curso" class="form-control">
+                    <option value="" selected>Selecione o curso</option>
+                    <option value="ads">ADS</option>
+                    <option value="math">Matemática</option>
+                    <option value="engmecanica">Eng.Mecânica</option>
+                </select>
+            </div>
+        </div>
+        <!-- DATA DA ENTREGA -->
+        <div class="form-group">
+            <label for="datafim" class="col-sm-10 control-label">Data da Entrega:</label>
+            <div class="col-sm-10">
+                <input type="date" id="datafim" name="datafim" class="form-control">
+            </div>
+        </div>
+        <!-- STATUS -->
+        <div class="form-group">
+            <label for="status" class="col-sm-2 control-label">Status:</label>
+            <div class="col-sm-10">
+                <select type="" id="status" name="status" class="form-control">
+                    <option value="" selected>Selecione o curso</option>
+                    <option value="pendente">Pendente</option>
+                    <option value="andamento">Em Andamento</option>
+                    <option value="concluído">Concluído</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <!-- BOTÃO ENVIAR -->
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
