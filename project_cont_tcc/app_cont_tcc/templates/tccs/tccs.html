@@ -2,4 +2,35 @@
 
 <!--Onde sera renderizado-->
 {% block conteudo %}
+
+<div class="container">
+    <h1> Bem-Vindo</h1>
+    <h3> Aqui estão as TCCs sob sua orientação</h3>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Orientador</th>
+            <th>Título da TCC</th>
+            <th>Aluno 1</th>
+            <th>Aluno 2</th>
+            <th>Aluno 3</th>
+            <th>Descrição</th>
+            <th>Data de Entrega</th>
+            <th>Status</th>
+        </tr>
+        {% for tcc in tccs %}
+        <tr>
+            <td>{{tccs.nome}}</td>
+            <td>{{tccs.titulo}}</td>
+            <td>{{tccs.aluno1}}</td>
+            <td>{{tccs.aluno2}}</td>
+            <td>{{tccs.aluno3}}</td>
+            <td>{{tccs.descricao}}</td>
+            <td>{{tccs.datafim}}</td>
+            <td>{{tccs.status}}</td>             
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
 {% endblock %}

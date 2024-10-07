@@ -22,7 +22,7 @@ def addtcc(request):
     novo_tcc.aluno2 = request.POST.get('aluno2')
     novo_tcc.aluno3 = request.POST.get('aluno3')
     novo_tcc.curso = request.POST.get('curso') #name = "curso" no home.html
-    novo_tcc.datafim = request.POST.get('fim')
+    novo_tcc.datafim = request.POST.get('datafim')
     novo_tcc.status = request.POST.get('status')
     novo_tcc.save()
     # Exibir todos os usuários já cadastrados em uma nova página
